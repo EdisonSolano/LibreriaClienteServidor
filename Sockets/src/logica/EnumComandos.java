@@ -1,0 +1,19 @@
+package logica;
+
+public enum EnumComandos {
+	PETICION_LISTA_LIBROS("PETICION_LISTA_LIBROS"),
+	PETICION_LIBRO("PETICION_LIBRO"),
+	PETICION_IDENTIFICACION_DEL_LIBRO("PETICION_IDENTIFICACION_DEL_LIBRO"),
+	IDENTIFICACION_DEL_LIBRO("IDENTIFICACION_DEL_LIBRO"),
+	PETICION_ENVIAR_LIBRO("PETICION_ENVIAR_LIBRO"),
+	FACILITAR_LIBRO("FACILITAR_LIBRO"),
+	PETICION_RECIBIR_LIBRO("PETICION_RECIBIR_LIBRO");
+	private final String nombre;
+	EnumComandos(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getNombreComando(){
+		return nombre;
+		
+	}
+}
