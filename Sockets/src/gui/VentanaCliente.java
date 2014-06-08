@@ -13,6 +13,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
 
+import logica.Cliente;
 import logica.Libreria;
 
 public class VentanaCliente extends JFrame {
@@ -35,8 +36,10 @@ public class VentanaCliente extends JFrame {
 	private JButton jButton3;
 	private JButton jButton4;
 	private Cursor cursosBoton;
+	private Cliente cliente;
 	private Libreria libreria;
-	PanelJlistLibrosCliente panelJlistLibrosCliente;
+	private PanelJlistLibrosCliente panelJlistLibrosCliente;
+	private PanelJlistBiblioteca panelJlistBiblioteca;
 	
 	public VentanaCliente() {
 		setTitle("Proyecto Sockets");
@@ -48,9 +51,14 @@ public class VentanaCliente extends JFrame {
 		setLayout(new BorderLayout());
 		this.inicializarJMenu();
 		this.inicializarJToolBar();
+		cliente = new Cliente("01", 01);
+		cliente.getLibreria().iniciarLibreriaCliente();
 		libreria = new Libreria();
-		panelJlistLibrosCliente = new PanelJlistLibrosCliente(libreria);
-		add(panelJlistLibrosCliente, BorderLayout.EAST);
+		libreria.iniciarLibreriaGeneral();
+		panelJlistLibrosCliente = new PanelJlistLibrosCliente(cliente.getLibreria().getLibreria());
+		add(BorderLayout.WEST, panelJlistLibrosCliente);
+		panelJlistBiblioteca = new PanelJlistBiblioteca(libreria.getLibreria());
+		add(BorderLayout.EAST, panelJlistBiblioteca);
 	}
 
 	public void inicializarJMenu() {

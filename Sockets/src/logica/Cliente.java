@@ -13,7 +13,8 @@ public class Cliente extends ThreadSocket{
 		super(ip, puerto);
 //		System.out.println(recibirMensaje());
 //		enviarMensaje("hola Servidor");
-		this.pedirLibro();
+		//this.pedirLibro();
+		libreria = new Libreria();
 	}
 	
 	public void gestionarConexion() {
@@ -51,4 +52,29 @@ public class Cliente extends ThreadSocket{
 	public void recibirLibreria(){
 		libreria = (Libreria) recibirObjeto();		
 	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Libreria getLibreria() {
+		return libreria;
+	}
+
+	public void setLibreria(Libreria libreria) {
+		this.libreria = libreria;
+	}
+
+	public Libro getLibro() {
+		return libro;
+	}
+
+	public void setLibro(Libro libro) {
+		this.libro = libro;
+	}
+	
 }

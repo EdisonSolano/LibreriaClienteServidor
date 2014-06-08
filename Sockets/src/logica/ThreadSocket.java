@@ -19,14 +19,14 @@ public class ThreadSocket implements Runnable {
 	private ObjectOutputStream canalSalidaObjeto;
 
 	public ThreadSocket(String ip, int puerto) {
-		try {
-			socket = new Socket(ip, puerto);
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		this.inicializarAtributos();
+//		try {
+//			socket = new Socket(ip, puerto);
+//		} catch (UnknownHostException e) {
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		this.inicializarAtributos();
 	}
 
 	public ThreadSocket(Socket socket) {

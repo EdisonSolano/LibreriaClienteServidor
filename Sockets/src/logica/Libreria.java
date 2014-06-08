@@ -7,7 +7,6 @@ public class Libreria extends ArrayList<Libro> implements Serializable {
 
 	private static final long serialVersionUID = 5337723239694208268L;
 	private Libreria libreria;
-
 	public Libro agregar(Libro libro) {
 		add(libro);
 		return libro;
@@ -22,7 +21,16 @@ public class Libreria extends ArrayList<Libro> implements Serializable {
 		}
 		return datos;
 	}
+	public void iniciarLibreriaGeneral(){
+		libreria = new Libreria();
+		libreria.add(new Libro("cien", "Gabriel", 1000487974, "Soledad"));
+	}
 
+	public void iniciarLibreriaCliente(){
+		libreria = new Libreria();
+		libreria.add(new Libro("cien", "Gabriel", 1000487974, "Soledad"));
+	}
+	
 	public Libreria getLibreria() {
 		return libreria;
 	}
